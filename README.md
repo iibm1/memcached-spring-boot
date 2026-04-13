@@ -183,6 +183,7 @@ memcached.cache.hash-strategy: # Memcached client hash strategy for distribution
 memcached.cache.servers-refresh-interval: # Interval in milliseconds that refreshes the list of cache node hostnames and IP addresses for AWS ElastiCache. The default is 60000 milliseconds.
 memcached.cache.metrics-cache-names: # Comma-separated list of cache names for which metrics will be collected.
 memcached.cache.disabled-cache-names: # Comma-separated list of cache names for which caching will be disabled. The main purpose of this property is to disable caching for debugging purposes.    
+memcached.cache.connectionPoolSize: #Xmemcached client only, size of connection pool (default "1")
 ```
 
 All of the values have sensible defaults and are bound to [MemcachedCacheProperties](https://github.com/sixhours-team/memcached-spring-boot/blob/master/memcached-spring-boot-autoconfigure/src/main/java/io/sixhours/memcached/cache/MemcachedCacheProperties.java) class.
