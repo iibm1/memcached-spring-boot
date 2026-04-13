@@ -111,6 +111,13 @@ public class MemcachedCacheProperties {
      */
     private HashStrategy hashStrategy = Default.HASH_STRATEGY;
 
+    /**
+     * Xmemcached supports connection pool instreadof client pool.you can create more connections to one or more memcached
+     * servers,and these connections share the same reactor and thread pools,it will reduce the cost
+     * of system.Default pool size is 1.
+     */
+    private int connectionPoolSize = 1;
+
     public List<InetSocketAddress> getServers() {
         return servers;
     }
@@ -235,6 +242,14 @@ public class MemcachedCacheProperties {
 
     public void setHashStrategy(HashStrategy hashStrategy) {
         this.hashStrategy = hashStrategy;
+    }
+
+    public int getConnectionPoolSize() {
+        return connectionPoolSize;
+    }
+
+    public void setConnectionPoolSize(int connectionPoolSize) {
+        this.connectionPoolSize = connectionPoolSize;
     }
 
     public static class Authentication {

@@ -82,6 +82,7 @@ public class XMemcachedCacheManagerFactory extends MemcachedCacheManagerFactory 
 
         builder.setSessionLocator(hashStrategyToLocator(hashStrategy));
         builder.setOpTimeout(properties.getOperationTimeout().toMillis());
+        builder.setConnectionPoolSize(properties.getConnectionPoolSize());
         builder.setCommandFactory(commandFactory(protocol));
 
         return new XMemcachedClient(builder.build());
